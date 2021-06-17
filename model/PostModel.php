@@ -4,8 +4,8 @@ class PostModel
   public function getPost(){
     $servername = "localhost";
     $username = "root";
-    $password = "";/* Put your password */
-    $dbname = "litephpdb";/* Put your database name */
+    $password = "";
+    $dbname = "litephpdb";
     $conn = mysqli_connect($servername, $username, $password, $dbname);
     $result = mysqli_query($conn,"SELECT * FROM post");
     $posts = array();

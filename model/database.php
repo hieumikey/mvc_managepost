@@ -1,11 +1,7 @@
 <?php
-  $servername = "localhost";
-  $username = "root";
-  $password = "";
-  $dbname = "litephpdb";
-  
-  $conn = mysqli_connect($servername, $username, $password, $dbname);
-  if ($conn) {
-    die("Connection failed: " . $conn->connect_error);
-  }
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "litephpdb";
+$conn = mysqli_connect($servername, $username, $password, $dbname);
 ?>

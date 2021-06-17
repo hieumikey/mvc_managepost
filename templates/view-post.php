@@ -34,7 +34,7 @@ table {
         <td>
             <a href="">Show</a>
             <a href="">Edit</a>
-            <a href="">Delete</a>
+            <a href="controllers/PostDeleteController.php?id=<?php echo $post["id"];?>">Delete</a>
         </td>
     </tr>
     <?php
