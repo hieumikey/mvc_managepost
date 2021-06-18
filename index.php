@@ -20,5 +20,23 @@
     // }
     require_once('model/createtable.php');
     $postcontroller = new PostController();
+    $action = $_GET['action'];
+    // $id = $_GET['id'];
+    // echo $action;
+    // echo "<br>";
+    // echo $id;
+    if($action == 'delete'){
+        $id = $_GET['id'];
+        $postcontroller->deletePost($id);
+    }
+    if($action == 'add' && $_GET['controller'] == 'admin'){
+        $postcontroller->addPost();
+    }
+
+    if($action == 'addpost'){
+        echo $action;
+        $postcontroller->createPost();
+    }
+
     $postcontroller->getPost(); 
 ?>
