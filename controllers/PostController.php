@@ -39,5 +39,15 @@ class PostController
     $postModel = new PostModel();
     $postModel->addPost($post);
   }
+
+  public function showPost($id){
+    require_once('model/PostModel.php');
+    $postModel = new PostModel();
+    $postrecord = $postModel->showPost($id);
+    // print_r($postrecord);
+    require_once('views/PostView.php');
+    $postView = new PostView();
+    $postView->showPost($postrecord);
+  }
 }
 ?>

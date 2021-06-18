@@ -44,7 +44,21 @@ class PostModel
         echo "Error: " . $sql . " " . mysqli_error($conn);
     }
     mysqli_close($conn);
-    
+  }
+
+  public function showPost($id){
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+    $dbname = "litephpdb";
+    $conn = mysqli_connect($servername, $username, $password, $dbname);
+    $result = mysqli_query($conn,"SELECT * FROM post where id = $id");
+    $post = array();
+    while($row = mysqli_fetch_assoc($result)){
+        $post[] = $row;
+    }
+    // print_r($post);
+    return $post;
   }
 }
 ?>

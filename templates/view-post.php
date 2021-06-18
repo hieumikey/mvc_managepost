@@ -37,7 +37,7 @@ table {
         <td> <img src=" <?php echo $post["images"]?> " alt=""> </td>
         <td><?php if ($post["statuss"]==1){ echo "Enabled";} else{echo "Disabled";}; ?></td>
         <td>
-            <a href="">Show</a>
+            <a href="?action=show&id=<?php echo $post["id"];?>">Show</a>
             <a href="">Edit</a>
             <a href="?action=delete&id=<?php echo $post["id"];?>">Delete</a>
         </td>

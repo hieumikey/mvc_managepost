@@ -38,5 +38,10 @@
         $postcontroller->createPost();
     }
 
+    if($action == 'show'){
+        $id = $_GET['id'];
+        $postcontroller->showPost($id);
+    }
+
     $postcontroller->getPost(); 
 ?>
