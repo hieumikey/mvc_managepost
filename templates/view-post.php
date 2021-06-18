@@ -20,13 +20,16 @@ table {
 <body>
 <h1>Manage</h1>
 <a href="?action=add&controller=admin" class="button">New</a>
+<!-- <?php
+
+?> -->
 <table>
     <tr>
-    <td>ID</td>
-    <td>Title</td>
-    <td>Image</td>
-    <td>Status</td>
-    <td>Action</td>
+        <td>ID</td>
+        <td>Title</td>
+        <td>Image</td>
+        <td>Status</td>
+        <td>Action</td>
     </tr>
     <?php
     foreach($posts as $post):

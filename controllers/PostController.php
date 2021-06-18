@@ -2,9 +2,14 @@
 class PostController
 {
   public function getPost(){
+    if (!isset($_GET['page'])) {
+        $page = 1;
+    } else {
+        $page = $_GET['page'];
+    }
     require_once('model/PostModel.php');
     $postModel = new PostModel();
-    $postrecord = $postModel->getPost();
+    $postrecord = $postModel->getPost($page);
     require_once('views/PostView.php');
     $postView = new PostView();
     $postView->showAllPost($postrecord);

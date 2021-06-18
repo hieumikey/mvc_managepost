@@ -1,16 +1,25 @@
 <?php
 class PostModel
 {
-  public function getPost(){
+  public function getPost($page){
     $servername = "localhost";
     $username = "root";
     $password = "";
     $dbname = "litephpdb";
     $conn = mysqli_connect($servername, $username, $password, $dbname);
     $result = mysqli_query($conn,"SELECT * FROM post");
+    $number_of_results = mysqli_num_rows($result);
+    $results_per_page = 2;
+    $number_of_pages = ceil($number_of_results/$results_per_page);
+    $this_page_first_result = ($page-1)*$results_per_page;
+    $sql='SELECT * FROM post LIMIT ' . $this_page_first_result . ',' .  $results_per_page;
+    $result = mysqli_query($conn, $sql);
     $posts = array();
     while($row = mysqli_fetch_assoc($result)){
         $posts[] = $row;
+    }
+    for ($page=1;$page<=$number_of_pages;$page++) {
+        echo '<a href="?action&controller&page=' . $page . '">' . $page . '</a> ';
     }
     return $posts;
   }
