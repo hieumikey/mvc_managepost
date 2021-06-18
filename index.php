@@ -43,5 +43,14 @@
         $postcontroller->showPost($id);
     }
 
+    if($action == 'edit'){
+        $id = $_GET['id'];
+        $postcontroller->editPost($id);
+    }
+
+    if($action == 'editpost'){
+        $id = $_GET['id'];
+        $postcontroller->savePost($id);
+    }
     $postcontroller->getPost(); 
 ?>

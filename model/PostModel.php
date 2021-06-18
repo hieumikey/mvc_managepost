@@ -60,5 +60,22 @@ class PostModel
     // print_r($post);
     return $post;
   }
+
+  public function savePost($post, $id){
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+    $dbname = "litephpdb";
+    $conn = mysqli_connect($servername, $username, $password, $dbname);
+    $sql = "UPDATE post SET title = '".$post['title']."', images='".$post['images']."', 
+    statuss='".$post['statuss']."', create_at='".$post['create_at']."', update_at='".$post['update_at']."', descriptions='".$post['descriptions']."' WHERE id = '".$id."'";
+    if (mysqli_query($conn, $sql)) {
+        echo "Update successfully !";
+    } else {
+        echo "Error: " . $sql . " " . mysqli_error($conn);
+    }
+    mysqli_close($conn);
+  }
+
 }
 ?>

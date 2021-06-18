@@ -8,8 +8,11 @@ class PostView{
     }
 
     public function showPost($post){
-        //print_r($post);
         require_once('templates/show-post.php');
+    }
+
+    public function editformPost($post){
+        require_once('templates/edit-form.php');
     }
 }
 ?>

@@ -12,8 +12,10 @@
 		<input type="text" name="images">
 		<br>
 		Status:<br>
-		<input type="number" name="statuss">
-        <p>O: disabled || 1: enabled</p>
+        <select id="cars" name="statuss">
+            <option value="1">Enabled</option>
+            <option value="0">Disabled</option>
+        </select><br>
         Create_at:<br>
 		<input type="date" name="create_at">
 		<br><br>

@@ -38,7 +38,7 @@ table {
         <td><?php if ($post["statuss"]==1){ echo "Enabled";} else{echo "Disabled";}; ?></td>
         <td>
             <a href="?action=show&id=<?php echo $post["id"];?>">Show</a>
-            <a href="">Edit</a>
+            <a href="?action=edit&id=<?php echo $post["id"];?>">Edit</a>
             <a href="?action=delete&id=<?php echo $post["id"];?>">Delete</a>
         </td>
     </tr>

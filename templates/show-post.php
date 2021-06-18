@@ -24,6 +24,7 @@ table {
         <td>ID</td>
         <td>Title</td>
         <td>Image</td>
+        <td>Descriptions</td>
         <td>Status</td>
         <td>Create_at</td>
         <td>Update_at</td>
@@ -35,6 +36,7 @@ table {
         <td><?php echo $p["id"];?></td>
         <td><?php echo $p["title"]; ?></td>
         <td><img src=" <?php echo $p["images"]?> " alt=""></td>
+        <td><?php echo $p["descriptions"]; ?></td>
         <td><?php if ($p["statuss"]==1){ echo "Enabled";} else{echo "Disabled";}; ?></td>
         <td><?php echo $p["create_at"];?></td>
         <td><?php echo $p["update_at"];?></td>
