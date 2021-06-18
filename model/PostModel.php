@@ -18,9 +18,13 @@ class PostModel
     while($row = mysqli_fetch_assoc($result)){
         $posts[] = $row;
     }
+    echo '<nav aria-label="Page navigation example">';
+    echo '<ul class="pagination">';
     for ($page=1;$page<=$number_of_pages;$page++) {
-        echo '<a href="?action&controller&page=' . $page . '">' . $page . '</a> ';
+        echo '<li class="page-item"><a class="page-link" href="?action&controller&page=' . $page . '">' . $page . '</a> </li>';
     }
+    echo '</ul>';
+    echo '</nav>';
     return $posts;
   }
 

@@ -19,7 +19,7 @@ table {
 </head>
 <body>
 <h1>Show Post</h1>
-<table>
+<table class="table table-bordered">
     <tr>
         <td>ID</td>
         <td>Title</td>
