@@ -20,7 +20,6 @@ class PostModel
     }
     $prev = $page - 1;
     $next = $page + 1;
-    // echo $prev;
     echo '<nav aria-label="Page navigation example">';
     echo '<ul class="pagination">';
     echo '<li class="page-item">';
@@ -37,7 +36,7 @@ class PostModel
         echo '<li class="page-item"><a class="page-link" href="?action&controller&page=' . $page . '">' . $page . '</a> </li>';
     }
     echo '<li class="page-item">';
-    if ($next <= $number_of_pages   ){
+    if ($next <= $number_of_pages){
         echo '<a class="page-link" href="?action&controller&page='. $next . ' " aria-label="Next">';
     }else{
         echo '<a class="page-link" href="#" aria-label="Next">';
