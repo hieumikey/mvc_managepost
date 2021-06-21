@@ -18,11 +18,34 @@ class PostModel
     while($row = mysqli_fetch_assoc($result)){
         $posts[] = $row;
     }
+    $prev = $page - 1;
+    $next = $page + 1;
+    // echo $prev;
     echo '<nav aria-label="Page navigation example">';
     echo '<ul class="pagination">';
+    echo '<li class="page-item">';
+    if ($prev > 0){
+        echo '<a class="page-link" href="?action&controller&page='. $prev . ' " aria-label="Previous">';
+    }else{
+        echo '<a class="page-link" href="#" aria-label="Previous">';
+    }
+    echo '<span aria-hidden="true">&laquo;</span>';
+    echo '<span class="sr-only">Previous</span>';
+    echo '</a>';
+    echo '</li>';
     for ($page=1;$page<=$number_of_pages;$page++) {
         echo '<li class="page-item"><a class="page-link" href="?action&controller&page=' . $page . '">' . $page . '</a> </li>';
     }
+    echo '<li class="page-item">';
+    if ($next <= $number_of_pages   ){
+        echo '<a class="page-link" href="?action&controller&page='. $next . ' " aria-label="Next">';
+    }else{
+        echo '<a class="page-link" href="#" aria-label="Next">';
+    }
+    echo '<span aria-hidden="true">&laquo;</span>';
+    echo '<span class="sr-only">Next</span>';
+    echo '</a>';
+    echo '</li>';
     echo '</ul>';
     echo '</nav>';
     return $posts;
